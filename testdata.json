@@ -1,0 +1,196 @@
+urllist: [
+{
+value: "japan.com",
+label: "japan",
+children : [
+{
+value: "jp.laptop.com",
+label : "laptop",
+children : [
+{
+value: "thinkpad x",
+label : "3",
+children : [
+{
+value: "thinkpad x1",
+label : 1,
+url : "x1"
+},
+{
+value: "thinkpad x2",
+label : 2,
+url : "x2"
+},
+{
+value: "thinkpad x3",
+label : 3,
+url : "x3"
+}
+]
+},
+{
+value: "thinkpad t",
+label : "1",
+children : [
+{
+value: "thinkpad t1",
+label : 1,
+url : "t1"
+},
+{
+value: "thinkpad t2",
+label : 2,
+url : "t2"
+},
+{
+value: "thinkpad t3",
+label : 3,
+url : "t3"
+}
+]
+}
+]
+},
+{
+value: "jp.deskyop.com",
+label : "desktop",
+children : [
+{
+value: "900",
+label : "1",
+sub2 : [
+{
+value: "920",
+label : 1,
+url : "920"
+},
+{
+value: "920",
+label : 2,
+url : "920"
+}
+]
+},
+{
+value: "700",
+label : "2",
+sub2 : [
+{
+value: "730",
+label : 1,
+url : "730"
+},
+{
+value: "720",
+label : 2,
+url : "720"
+},
+{
+value: "720",
+label : 3,
+url : "720"
+}
+]
+}
+]
+}
+]
+},
+{
+value: "korea",
+label: "korea.com",
+children : [
+{
+value: "ko.laptop.com",
+label : "laptop",
+children : [
+{
+value: "think x",
+label : "1",
+children : [
+{
+value: "think x1",
+label : 1,
+url : "x1"
+},
+{
+value: "think x2",
+label : 2,
+url : "x2"
+},
+{
+value: "think x3",
+label : 3,
+url : "x3"
+}
+]
+},
+{
+value: "think t",
+label : "1",
+children : [
+{
+value: "think t1",
+label : 1,
+url : "t1"
+},
+{
+value: "think t2",
+label : 2,
+url : "t2"
+},
+{
+value: "think t3",
+label : 3,
+url : "t3"
+}
+]
+}
+]
+},
+{
+value: "ko.desktop.com",
+label : "desktop",
+children : [
+{
+value: "i1",
+label : "1",
+children : [
+{
+value: "i11",
+label : 1,
+url : "i11"
+},
+{
+value: "i12",
+label : 2,
+url : "i12"
+}
+]
+},
+{
+value: "i2",
+label : "2",
+children : [
+{
+value: "i21",
+label : 1,
+url : "i21"
+},
+{
+value: "i22",
+label : 2,
+url : "i22"
+},
+{
+value: "i23",
+label : 3,
+url : "i23"
+}
+]
+}
+]
+}
+]
+}
+],
