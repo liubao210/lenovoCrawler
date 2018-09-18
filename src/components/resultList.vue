@@ -38,7 +38,7 @@
         fixed="right"
         label="操作"
         width="100">
-        <template slot-scope="scope">
+        <template slot-scope="scope" style="text-align:center">
           <el-button @click="handleClick(scope.row)" type="text" size="small">预览</el-button>
           <el-button type="text" size="small">下载</el-button>
         </template>
