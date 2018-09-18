@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import mySelect from '@/components/mySelect'
+import app from '@/App'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path : '/',
-      name : mySelect,
-      component : mySelect,
+      name : 'app',
+      component : app,
     },
   ]
 })
