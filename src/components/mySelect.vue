@@ -35,7 +35,7 @@
     name: "myselect",
     data() {
       return {
-        placeholderStatus:'请选择Site!',
+        placeholderStatus:'请先选择Site',
         isSplitterDisabled: true,
         isBrandDisabled: true,
         selectedOptions: [],
@@ -98,12 +98,7 @@
       },
       watch: {
         siteValue: function(){
-        (this.siteValue === null)?this.placeholderStatus='请选择Site!' :this.placeholderStatus='请选择'
-        }
-      },
-      computed: {
-        placeholderStatusSplitter: siteValue => {
-          return  (this.siteValue)?'请选择Spliter': '请选择Site!'
+        (this.siteValue === null)?this.placeholderStatus='请先选择Site' :this.placeholderStatus='请选择'
         }
       },
       methods: {
