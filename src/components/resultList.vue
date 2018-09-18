@@ -2,46 +2,45 @@
   <div id="resultList">
     <el-table
       :data="tableData"
-      border
-      style="width: 100%">
+      border>
       <el-table-column
         fixed
         prop="date"
-        label="日期"
+        label="爬取日期"
         width="150">
       </el-table-column>
       <el-table-column
         prop="name"
-        label="姓名"
+        label="Site"
         width="120">
       </el-table-column>
       <el-table-column
         prop="province"
-        label="省份"
+        label="Splitter"
         width="120">
       </el-table-column>
       <el-table-column
         prop="city"
-        label="市区"
+        label="Brand"
         width="120">
       </el-table-column>
       <el-table-column
         prop="address"
-        label="地址"
-        width="300">
+        label="Series"
+        width="200">
       </el-table-column>
       <el-table-column
         prop="zip"
-        label="邮编"
-        width="120">
+        label="Sub-series"
+        width="200">
       </el-table-column>
       <el-table-column
         fixed="right"
         label="操作"
         width="100">
         <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-          <el-button type="text" size="small">编辑</el-button>
+          <el-button @click="handleClick(scope.row)" type="text" size="small">预览</el-button>
+          <el-button type="text" size="small">下载</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -60,18 +59,18 @@
       return {
         tableData: [{
           date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
+          name: 'Japan',
+          province: 'Laptop',
+          city: 'ThinkPad',
+          address: 'ThinkPad x AlienWare',
+          zip: 23333333,
         }, {
           date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
+          name: 'Japan',
+          province: 'Laptop',
+          city: 'ThinkPad',
+          address: 'ThinkPad x AlienWare',
+          zip: 23333333,
         },]
       }
     }
@@ -81,6 +80,6 @@
 <style scoped>
   #resultList {
     margin: auto;
-    max-width: 1000px;
+    width: 80%;
     }
 </style>
