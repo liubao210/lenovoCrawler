@@ -2,7 +2,10 @@
   <div id="mySelect">
     <h1>Web Crawler</h1>
     <div class="select">
-      <el-select v-model="siteValue" @change="changeSite" placeholder="请选择Site">
+      <el-select
+      v-model="siteValue"
+      @change="changeSite"
+      placeholder="请选择Site">
         <el-option
           v-for="item in siteList"
           :key="item.value"
@@ -10,7 +13,12 @@
           :value="item.value">
         </el-option>
       </el-select>
-      <el-select v-model="splitterValue" clearable :disabled=isSplitterDisabled :placeholder=placeholderStatus>
+      <el-select
+      v-model="splitterValue"
+      @change='changeSplitter'
+      clearable
+      :disabled=isSplitterDisabled
+      :placeholder=placeholderSplitterStatus>
         <el-option
           v-for="item in splitterList"
           :key="item.value"
@@ -18,7 +26,11 @@
           :value="item.value">
         </el-option>
       </el-select>
-      <el-select v-model="brandValue" clearable :disabled=isBrandDisabled :placeholder=placeholderStatus>
+      <el-select
+      v-model="brandValue"
+      clearable
+      :disabled=isBrandDisabled
+      :placeholder=placeholderBrandStatus>
         <el-option
           v-for="item in brandlist"
           :key="item.value"
@@ -35,15 +47,16 @@
     name: "myselect",
     data() {
       return {
-        placeholderStatus:'请先选择Site',
+        placeholderSplitterStatus:'请先选择Site',
+        placeholderBrandStatus:'请先选择Splitter',
         isSplitterDisabled: true,
         isBrandDisabled: true,
         selectedOptions: [],
         siteValue: null,
         index1:'',
-        splitterValue:'',
+        splitterValue:null,
         index2:'',
-        brandValue:'',
+        brandValue:null,
         index3:'',
         splitterList:[],
         brandlist:[],
@@ -85,7 +98,7 @@
                 children: []
               }
             ]
-          }
+          },
         ],
         props: {
           value: 'value',
@@ -98,7 +111,10 @@
       },
       watch: {
         siteValue: function(){
-        (this.siteValue === null)?this.placeholderStatus='请先选择Site' :this.placeholderStatus='请选择'
+        (this.siteValue === null)?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择'
+      },
+        splitterValue: function(){
+        (this.splitterValue === null)?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择'
         }
       },
       methods: {
@@ -117,9 +133,11 @@
       },
       changeSite(val){
         this.isSplitterDisabled = false;
-        this.isBrandDisabled = false;
         this.splitterList = this.siteList[val].children
-        this.brandList = this.siteList[val].children
+      },
+      changeSplitter(val){
+        this.isBrandDisabled = false;
+        this.brandList = this.splitter[val].children
       },
     }
   }
