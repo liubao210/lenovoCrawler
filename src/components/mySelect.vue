@@ -131,7 +131,7 @@
       handleChange(value) {
         // console.log(value);
       },
-      handleItemChange(val) {
+      /*handleItemChange(val) {
         console.log('active item:', val);
         this.siteList[0].children[0].children = [
           {
@@ -139,7 +139,7 @@
             label: "thinkpad",
           },
         ]
-      },
+      }*/
       changeSite(val){
         (isNaN(parseInt(this.siteValue)))?this.isSplitterDisabled = true :this.isSplitterDisabled = false;
         this.splitterList = this.siteList[val].children;
