@@ -1,7 +1,7 @@
 <template>
   <div id="mySelect">
     <h1>Web Crawler</h1>
-    <div class="select">
+    <div>
       <el-select
         v-model="siteValue"
         @change="changeSite"
