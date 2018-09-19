@@ -1,11 +1,29 @@
 <template lang="html">
   <div id="submitButton">
-    <el-button type="primary" icon="el-icon-search" circle></el-button>
+    <el-button
+      type="primary"
+      icon="el-icon-search"
+      circle
+      @click='submit'>
+    </el-button>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import resultList from '@/components/resultList'
 export default {
+  components: {
+    resultList,
+  },
+  methods: {
+    submit: function() {
+      var resultListClass = Vue.extend(resultList);
+      var instance = new resultListClass();
+      instance.$mount();
+      document.getElementById('resultHolder').appendChild(instance.$el)
+    },
+  },
 }
 </script>
 

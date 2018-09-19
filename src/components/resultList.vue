@@ -64,13 +64,6 @@
           city: 'ThinkPad',
           address: 'ThinkPad x AlienWare',
           zip: 23333333,
-        }, {
-          date: '2016-05-02',
-          name: 'Japan',
-          province: 'Laptop',
-          city: 'ThinkPad',
-          address: 'ThinkPad x AlienWare',
-          zip: 23333333,
         },]
       }
     }
