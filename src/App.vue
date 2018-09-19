@@ -3,10 +3,9 @@
     <el-container><!--elementUi 外层主容器-->
       <el-main><!--elementUi 外层容器-->
         <mySelect></mySelect><!--选择菜单-->
-        <submitButton></submitButton><!--提交爬取申请的按钮-->
-        <div id="resultHolder">
-          <resultList></resultList><!--结果列表通过按钮添加-->
-        </div>
+        <submitButton></submitButton>
+        <tabControl></tabControl><!--页面切换-->
+
       </el-main>
     </el-container>
   </div>
@@ -14,14 +13,16 @@
 
 <script>
 import mySelect from "@/components/mySelect"
-import resultList from '@/components/resultList'
+//import resultList from '@/components/resultList'
 import submitButton from '@/components/submitButton'
+import tabControl from '@/components/tabControl'
 export default {
   name: 'App',
   components: {
     mySelect,
-    resultList,
+    //resultList,
     submitButton,
+    tabControl,
   },
 }
 </script>
