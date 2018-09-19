@@ -1,6 +1,6 @@
 <template>
   <div id="mySelect">
-    <h1>Web Crawler</h1>
+    <h1>网站爬虫</h1>
     <div>
       <table>
         <tr>
@@ -47,9 +47,6 @@
             </el-select></td>
         </tr>
       </table>
-
-
-
     </div>
   </div>
 </template>
@@ -162,5 +159,13 @@
     text-align: center;
     margin-bottom: 5px;
     }
-
+  h1 {
+    font-size: 35px;
+    color: #1fc8db;
+  }
+  th {
+    font-weight: normal;
+    font-size: 10px;
+    color: #606266;
+  }
 </style>
