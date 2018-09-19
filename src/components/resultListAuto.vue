@@ -5,7 +5,7 @@
       >
       <el-table-column
         prop="date"
-        label="爬取日期"
+        label="爬取日期（自动）"
         width="150">
       </el-table-column>
       <el-table-column
