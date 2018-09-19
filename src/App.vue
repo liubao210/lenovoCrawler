@@ -36,7 +36,7 @@ export default {
     border-radius: 10px;
     width: 100%;
     min-height: 900px;
-    background-color: #F2F6FC;
+    background-color: #EBEEF5;
     overflow: hidden;
   }
 </style>

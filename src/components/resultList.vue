@@ -9,27 +9,27 @@
         width="150">
       </el-table-column>
       <el-table-column
-        prop="name"
+        prop="site"
         label="Site"
         width="120">
       </el-table-column>
       <el-table-column
-        prop="province"
+        prop="splitter"
         label="Splitter"
         width="120">
       </el-table-column>
       <el-table-column
-        prop="city"
+        prop="brand"
         label="Brand"
         width="120">
       </el-table-column>
       <el-table-column
-        prop="address"
+        prop="series"
         label="Series"
         width="200">
       </el-table-column>
       <el-table-column
-        prop="zip"
+        prop="subseries"
         label="Sub-series"
         width="200">
       </el-table-column>
@@ -56,11 +56,11 @@
       return {
         tableData: [{
           date: '2016-05-03',
-          name: 'Japan',
-          province: 'Laptop',
-          city: 'ThinkPad',
-          address: 'ThinkPad x AlienWare',
-          zip: 23333333,
+          site: 'Japan',
+          splitter: 'Laptop',
+          brand: 'ThinkPad',
+          series: 'ThinkPad x AlienWare',
+          subseries: 23333333,
         },]
       }
     }

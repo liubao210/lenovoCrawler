@@ -1,15 +1,18 @@
 <template>
-  <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
-    <el-tab-pane
-      label="手动任务"
-      name="first">
-      <resultList></resultList>
-    </el-tab-pane>
-    <el-tab-pane
-      label="自动任务"
-      name="second">
-      <resultListAuto></resultListAuto>
-    </el-tab-pane>
+  <el-tabs
+    v-model="activeName2"
+    type="border-card"
+    @tab-click="handleClick">
+      <el-tab-pane
+        label="手动任务"
+        name="first">
+        <resultList></resultList>
+      </el-tab-pane>
+      <el-tab-pane
+        label="自动任务"
+        name="second">
+        <resultListAuto></resultListAuto>
+      </el-tab-pane>
   </el-tabs>
 </template>
 <script>
@@ -32,5 +35,9 @@
     }
   };
 </script>
-<style>
+
+<style >
+  .el-tabs {
+    border-radius: 10px;
+  }
 </style>
