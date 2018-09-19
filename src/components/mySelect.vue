@@ -57,7 +57,7 @@
     data() {
       return {
         placeholderSplitterStatus:'请先选择Site',
-        placeholderBrandStatus:'请先选择Splitter',
+        placeholderBrandStatus:'请先选择Site',
         isSplitterDisabled: true,
         isBrandDisabled: true,
         selectedOptions: [],
@@ -121,6 +121,7 @@
       watch: {
         siteValue: function(){
           (isNaN(parseInt(this.siteValue)))?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择';
+          (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
       },
         splitterValue: function(){
           (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
