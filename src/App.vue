@@ -4,7 +4,10 @@
       <el-main><!--elementUi 外层容器-->
         <mySelect></mySelect><!--选择菜单-->
         <submitButton></submitButton>
-        <tabControl></tabControl><!--页面切换-->
+        <div id="resultHolder">
+            <tabControl></tabControl><!--页面切换-->
+        </div>
+
 
       </el-main>
     </el-container>
@@ -30,10 +33,10 @@ export default {
 <style>
   #resultHolder {
     margin: auto;
-    padding-top: 5px;
     border-radius: 10px;
     width: 100%;
     min-height: 900px;
     background-color: #F2F6FC;
+    overflow: hidden;
   }
 </style>
