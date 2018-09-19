@@ -3,9 +3,9 @@
     <h1>Web Crawler</h1>
     <div class="select">
       <el-select
-      v-model="siteValue"
-      @change="changeSite"
-      placeholder="请选择Site">
+        v-model="siteValue"
+        @change="changeSite"
+        placeholder="请选择Site">
         <el-option
           v-for="item in siteList"
           :key="item.value"
@@ -14,11 +14,11 @@
         </el-option>
       </el-select>
       <el-select
-      v-model="splitterValue"
-      @change='changeSplitter'
-      clearable
-      :disabled=isSplitterDisabled
-      :placeholder=placeholderSplitterStatus>
+        v-model="splitterValue"
+        @change='changeSplitter'
+        clearable
+        :disabled=isSplitterDisabled
+        :placeholder=placeholderSplitterStatus>
         <el-option
           v-for="item in splitterList"
           :key="item.value"
@@ -27,10 +27,10 @@
         </el-option>
       </el-select>
       <el-select
-      v-model="brandValue"
-      clearable
-      :disabled=isBrandDisabled
-      :placeholder=placeholderBrandStatus>
+        v-model="brandValue"
+        clearable
+        :disabled=isBrandDisabled
+        :placeholder=placeholderBrandStatus>
         <el-option
           v-for="item in brandlist"
           :key="item.value"
@@ -111,10 +111,10 @@
       },
       watch: {
         siteValue: function(){
-        (this.siteValue === null)?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择'
+          (isNaN(parseInt(this.siteValue)))?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择Splitter';
       },
         splitterValue: function(){
-        (this.splitterValue === null)?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择'
+          (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择Brand';
         }
       },
       methods: {
@@ -132,12 +132,12 @@
         ]
       },
       changeSite(val){
-        this.isSplitterDisabled = false;
-        this.splitterList = this.siteList[val].children
+        (isNaN(parseInt(this.siteValue)))?this.isSplitterDisabled = true :this.isSplitterDisabled = false;
+        this.splitterList = this.siteList[val].children;
       },
       changeSplitter(val){
-        this.isBrandDisabled = false;
-        this.brandList = this.splitter[val].children
+        (isNaN(parseInt(this.splitterValue)))?this.isBrandDisabled = true :this.isBrandDisabled = false;
+        this.brandList = this.splitter[val].children;
       },
     }
   }
