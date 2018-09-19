@@ -2,42 +2,54 @@
   <div id="mySelect">
     <h1>Web Crawler</h1>
     <div>
-      <el-select
-        v-model="siteValue"
-        @change="changeSite"
-        placeholder="请选择Site">
-        <el-option
-          v-for="item in siteList"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
-      <el-select
-        v-model="splitterValue"
-        @change='changeSplitter'
-        clearable
-        :disabled=isSplitterDisabled
-        :placeholder=placeholderSplitterStatus>
-        <el-option
-          v-for="item in splitterList"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
-      <el-select
-        v-model="brandValue"
-        clearable
-        :disabled=isBrandDisabled
-        :placeholder=placeholderBrandStatus>
-        <el-option
-          v-for="item in brandlist"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
+      <table>
+        <tr>
+          <th>Site</th>
+          <th>Splitter</th>
+          <th>Brand</th>
+        </tr>
+        <tr>
+          <td><el-select
+            v-model="siteValue"
+            @change="changeSite"
+            placeholder="请选择Site">
+            <el-option
+              v-for="item in siteList"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select></td>
+          <td><el-select
+            v-model="splitterValue"
+            @change='changeSplitter'
+            clearable
+            :disabled=isSplitterDisabled
+            :placeholder=placeholderSplitterStatus>
+            <el-option
+              v-for="item in splitterList"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select></td>
+          <td><el-select
+              v-model="brandValue"
+              clearable
+              :disabled=isBrandDisabled
+              :placeholder=placeholderBrandStatus>
+              <el-option
+                v-for="item in brandlist"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select></td>
+        </tr>
+      </table>
+
+
+
     </div>
   </div>
 </template>
@@ -144,6 +156,9 @@
 </script>
 
 <style scoped>
+  table {
+    margin: auto;
+  }
   #mySelect {
     text-align: center;
     margin-bottom: 5px;
