@@ -35,10 +35,10 @@
       </el-table-column>
       <el-table-column
         label="操作"
-        width="100">
+        width="150">
         <template slot-scope="scope" style="text-align:center">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">预览</el-button>
-          <el-button type="text" size="small">下载</el-button>
+          <el-button @click="handleClick(scope.row)" type="success" size="small">预览</el-button>
+          <el-button type="primary" size="small">下载</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -59,7 +59,7 @@
           name: 'Austrilia',
           province: 'Laptop',
           city: 'ThinkPad',
-          address: 'ThinkPad x AlienWare',
+          address: 'IdeaPad x AlienWare',
           zip: 23333333,
         },]
       }
@@ -70,6 +70,6 @@
 <style scoped>
   #resultList {
     margin: auto;
-    width: 80%;
+    width: 90%;
     }
 </style>
