@@ -12,7 +12,7 @@
           <td><el-select
             v-model="siteValue"
             @change="changeSite"
-            placeholder="请选择Site">
+            placeholder="请选择">
             <el-option
               v-for="item in siteList"
               :key="item.value"
@@ -123,10 +123,10 @@
       },
       watch: {
         siteValue: function(){
-          (isNaN(parseInt(this.siteValue)))?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择Splitter';
+          (isNaN(parseInt(this.siteValue)))?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择';
       },
         splitterValue: function(){
-          (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择Brand';
+          (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
         }
       },
       methods: {
@@ -135,7 +135,6 @@
       },
       handleItemChange(val) {
         console.log('active item:', val);
-        // console.log(this.siteList[0]);
         this.siteList[0].children[0].children = [
           {
             value: "thinkpad.com",
