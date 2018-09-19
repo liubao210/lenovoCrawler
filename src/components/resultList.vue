@@ -2,9 +2,8 @@
   <div id="resultList">
     <el-table
       :data="tableData"
-      border>
+      >
       <el-table-column
-        fixed
         prop="date"
         label="爬取日期"
         width="150">
@@ -35,7 +34,6 @@
         width="200">
       </el-table-column>
       <el-table-column
-        fixed="right"
         label="操作"
         width="100">
         <template slot-scope="scope" style="text-align:center">

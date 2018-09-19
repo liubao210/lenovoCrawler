@@ -4,9 +4,9 @@
       <el-main><!--elementUi 外层容器-->
         <mySelect></mySelect><!--选择菜单-->
         <submitButton></submitButton><!--提交爬取申请的按钮-->
-        <!--<div id="resultHolder">
-          <resultList></resultList>结果列表通过按钮添加
-        </div>-->
+        <div id="resultHolder">
+          <resultList></resultList><!--结果列表通过按钮添加-->
+        </div>
       </el-main>
     </el-container>
   </div>
@@ -27,4 +27,12 @@ export default {
 </script>
 
 <style>
+  #resultHolder {
+    margin: auto;
+    padding-top: 5px;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 900px;
+    background-color: #F2F6FC;
+  }
 </style>

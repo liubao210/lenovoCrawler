@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
+/*import Vue from 'vue'
 import resultList from '@/components/resultList'
 export default {
   components: {
@@ -24,7 +24,7 @@ export default {
       document.getElementById('resultHolder').appendChild(instance.$el)
     },
   },
-}
+}*/
 </script>
 
 <style scoped>
