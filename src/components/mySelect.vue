@@ -11,7 +11,7 @@
         <tr>
           <td><el-select
             v-model="siteValue"
-            @change="changeSite"
+            @change=changeSite
             placeholder="请选择">
             <el-option
               v-for="item in siteList"
