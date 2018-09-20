@@ -19,13 +19,13 @@
         siteValue: null,
       }
     },
-    mounted() {
+    created() {
       this.activateSubmitButton()
     },
     methods: {
       activateSubmitButton() {
         EVENTBUS.$on('activatingSubmitButton', siteValue => {
-          (isNaN(parseInt(siteValue)))?this.isSubmitButtonDisabled = true: this.isSubmitButtonDisabled = false
+          (isNaN(parseInt(siteValue)))?this.isSubmitButtonDisabled = true: this.isSubmitButtonDisabled = false;
         });//激活subminButton的可选择状态
         EVENTBUS.$off('activatingSubmitButton', siteValue);//注销EVENTBUS监听
       },
