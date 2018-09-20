@@ -52,6 +52,7 @@
 </template>
 
 <script>
+  import EVENTBUS from '@/eventBus.js'
   export default {
     name: "mySelect",
     data() {
@@ -139,8 +140,10 @@
         ]
       }*/
       changeSite(val){
-        (isNaN(parseInt(this.siteValue)))?this.isSplitterDisabled = true :this.isSplitterDisabled = false;
-        this.splitterList = this.siteList[val].children;
+        (isNaN(parseInt(this.siteValue)))?this.isSplitterDisabled = true :this.isSplitterDisabled = false;//更改级联选择可选择状态
+        this.splitterList = this.siteList[val].children;//给splitter赋值
+        
+        EVENTBUS.$emit('activatingSubmitButton',this.siteValue)
       },
       changeSplitter(val){
         (isNaN(parseInt(this.splitterValue)))?this.isBrandDisabled = true :this.isBrandDisabled = false;

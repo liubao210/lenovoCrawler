@@ -11,21 +11,27 @@
 </template>
 
 <script>
-/*import Vue from 'vue'
-import resultList from '@/components/resultList'
-export default {
-  components: {
-    resultList,
-  },
-  methods: {
-    submit: function() {
-      var resultListClass = Vue.extend(resultList);
-      var instance = new resultListClass();
-      instance.$mount();
-      document.getElementById('resultHolder').appendChild(instance.$el)
+  import EVENTBUS from '@/eventBus.js'
+  export default{
+    data (){
+      return{
+        isSubmitButtonDisabled: true,
+        siteValue: null,
+      }
     },
-  },
-}*/
+    created() {
+      this.getActivateMessage()
+    },
+    methods: {
+      getActivateMessage() {
+        EVENTBUS.$on('activatingSubmitButton', siteValue => {
+          (isNaN(parseInt(siteValue)))?this.isSubmitButtonDisabled = true: this.isSubmitButtonDisabled = false
+        })
+      }
+
+    },
+  }
+
 </script>
 
 <style scoped>
