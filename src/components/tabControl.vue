@@ -2,7 +2,8 @@
   <el-tabs
     v-model="activeName2"
     type="border-card"
-    @tab-click="handleClick">
+    @tab-click="handleClick"
+    lazy=true>
       <el-tab-pane
         label="手动任务"
         name="first">
