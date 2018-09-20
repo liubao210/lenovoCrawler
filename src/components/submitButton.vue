@@ -4,6 +4,7 @@
       type="primary"
       icon="el-icon-search"
       circle
+      size='big'
       :disabled=isSubmitButtonDisabled
       @click='submit'>
     </el-button>
