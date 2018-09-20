@@ -53,19 +53,19 @@
 
 <script>
   export default {
-    name: "myselect",
+    name: "mySelect",
     data() {
       return {
         placeholderSplitterStatus:'请先选择Site',
         placeholderBrandStatus:'请先选择Site',
         isSplitterDisabled: true,
         isBrandDisabled: true,
-        selectedOptions: [],
         siteValue: null,
-        index1:'',
         splitterValue:null,
-        index2:'',
         brandValue:null,
+        selectedOptions: [],
+        index1:'',
+        index2:'',
         index3:'',
         splitterList:[],
         brandlist:[],
@@ -73,7 +73,7 @@
           {
             url: "japan.com",
             value: 0,
-            label: "japan",
+            label: "Japan",
             children: [
               {
                 url: "jp.laptop.com",
@@ -109,25 +109,23 @@
             ]
           },
         ],
-        props: {
-          value: 'value',
-          label: 'label',
-          children: 'children'
-        },
-        serieslist: [],
-        subserieslist: []
-      }
-      },
-      watch: {
-        siteValue: function(){
-          (isNaN(parseInt(this.siteValue)))?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择';
-          (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
-      },
-        splitterValue: function(){
-          (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
+          props: {
+            value: 'value',
+            label: 'label',
+            children: 'children'
+          },
         }
       },
-      methods: {
+    watch: {
+      siteValue: function(){
+        (isNaN(parseInt(this.siteValue)))?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择';
+        (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
+      },
+      splitterValue: function(){
+        (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
+      }
+    },
+    methods: {
       handleChange(value) {
         // console.log(value);
       },
