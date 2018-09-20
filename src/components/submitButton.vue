@@ -30,7 +30,6 @@
       },//激活subminButton的可选择状态
     },
   }
-
 </script>
 
 <style scoped>

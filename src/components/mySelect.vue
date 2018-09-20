@@ -68,8 +68,8 @@
         index1:'',
         index2:'',
         index3:'',
-        splitterList:[],
-        brandlist:[],
+        splitterList:[],//有接口后通过后台的爬虫获得
+        brandlist:[],//根据splitterList，通过后台爬虫获得
         siteList: [
           {
             url: "japan.com",
@@ -141,13 +141,12 @@
       }*/
       changeSite(val){
         (isNaN(parseInt(this.siteValue)))?this.isSplitterDisabled = true :this.isSplitterDisabled = false;//更改级联选择可选择状态
-        this.splitterList = this.siteList[val].children;//给splitter赋值
-
+        this.splitterList = this.siteList[val].children;//给splitter赋值，有接口后通过后台爬虫获得
         EVENTBUS.$emit('activatingSubmitButton',this.siteValue)//EVENTBUS传递参数，激活submitButton为可选择状态
       },
       changeSplitter(val){
         (isNaN(parseInt(this.splitterValue)))?this.isBrandDisabled = true :this.isBrandDisabled = false;
-        this.brandList = this.splitter[val].children;
+        this.brandList = this.splitter[val].children;//给brand赋值，有接口后通过后台爬虫获得
       },
     }
   }
@@ -157,10 +156,6 @@
   table {
     margin: auto;
   }
-  #mySelect {
-    text-align: center;
-    margin-bottom: 5px;
-    }
   h1 {
     font-size: 35px;
     color: #1fc8db;
@@ -168,6 +163,10 @@
   th {
     font-weight: normal;
     font-size: 10px;
-    color: #606266;
+    color: #909399;
+  }
+  #mySelect {
+    text-align: center;
+    margin-bottom: 5px;
   }
 </style>

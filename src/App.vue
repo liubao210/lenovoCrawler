@@ -5,7 +5,7 @@
         <mySelect></mySelect><!--选择菜单-->
         <submitButton></submitButton>
         <div id="resultHolder">
-            <tabControl></tabControl><!--页面切换-->
+          <tabControl></tabControl><!--页面切换-->
         </div>
 
 
@@ -35,7 +35,7 @@ export default {
     margin: auto;
     border-radius: 10px;
     width: 100%;
-    min-height: 900px;
+    padding-bottom: 120px;
     background-color: #EBEEF5;
     overflow: hidden;
   }
