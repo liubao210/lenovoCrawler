@@ -1,6 +1,6 @@
 <template>
   <div id="mySelect">
-    <h1>网站爬虫</h1>
+    <h1>联想爬虫</h1>
     <div>
       <table>
         <tr>
