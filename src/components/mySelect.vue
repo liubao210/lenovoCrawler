@@ -142,8 +142,8 @@
       changeSite(val){
         (isNaN(parseInt(this.siteValue)))?this.isSplitterDisabled = true :this.isSplitterDisabled = false;//更改级联选择可选择状态
         this.splitterList = this.siteList[val].children;//给splitter赋值
-        
-        EVENTBUS.$emit('activatingSubmitButton',this.siteValue)
+
+        EVENTBUS.$emit('activatingSubmitButton',this.siteValue)//EVENTBUS传递参数，激活submitButton为可选择状态
       },
       changeSplitter(val){
         (isNaN(parseInt(this.splitterValue)))?this.isBrandDisabled = true :this.isBrandDisabled = false;
