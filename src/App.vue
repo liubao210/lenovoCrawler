@@ -4,11 +4,10 @@
       <el-main><!--elementUi 外层容器-->
         <mySelect></mySelect><!--选择菜单-->
         <submitButton></submitButton>
+        <tabControlSelect></tabControlSelect>
         <div id="resultHolder">
           <tabControl></tabControl><!--页面切换-->
         </div>
-
-
       </el-main>
     </el-container>
   </div>
@@ -16,16 +15,16 @@
 
 <script>
 import mySelect from "@/components/mySelect"
-//import resultList from '@/components/resultList'
 import submitButton from '@/components/submitButton'
 import tabControl from '@/components/tabControl'
+import tabControlSelect from '@/components/tabControlSelect'
 export default {
   name: 'App',
   components: {
     mySelect,
-    //resultList,
     submitButton,
     tabControl,
+    tabControlSelect,
   },
 }
 </script>
