@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <transition name="el-zoom-in-top">
+  <div id="container">
+    <transition name="el-zoom-in-top"><!--渐变效果-->
       <div id="tabControlSelect" v-show='isActive'><!--绑定样式，激活与未激活-->
-          <el-tabs tab-position=left style="height: 200px;">
+          <el-tabs tab-position=left type='border-card' style="height: 200px;">
             <el-tab-pane
               v-for='(splitter) in splitterLables'
               :key='splitter.splitterKey'
@@ -64,7 +64,6 @@
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: #EBEEF5;
-    padding: 5px;
     border-radius: 10px;
   }
 </style>
