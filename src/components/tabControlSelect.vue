@@ -3,9 +3,10 @@
     <el-tabs tab-position=left style="height: 200px;">
       <el-tab-pane
         v-for='(splitter) in splitterLables'
-        :label='splitter.splitterNames'>
+        :key='splitter.splitterKey'
+        :label='splitter.splitterNames'>  <!--display splitter list-->
         <span
-          v-for='(brand, index) in splitter.brandNames'>
+          v-for='(brand, index) in splitter.brandNames'>    <!--display brand list-->
           {{ brand }}
         </span>
       </el-tab-pane>
@@ -16,11 +17,11 @@
   export default {
     data() {
       return {
-        selectedIndex: 0,
         tabPosition: 'left',
         splitterLables: [
           {
             splitterNames:'Desktop',
+            splitterKey: 1001,
             brandNames: [
               'ThinKPad',
               'Yoga',
@@ -29,12 +30,12 @@
           },
           {
             splitterNames: 'WorkStation',
+            splitterKey: 1002,
             brandNames: [
               'ThinkStation',
               'ThinkServer',
             ],
           },
-
         ],
       };
     }
@@ -49,7 +50,5 @@
     background-color: #EBEEF5;
     padding: 5px;
     border-radius: 10px;
-  }
-  .el-tabs__content {
   }
 </style>
