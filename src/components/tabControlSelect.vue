@@ -7,10 +7,7 @@
               v-for='(splitter) in splitterLables'
               :key='splitter.splitterKey'
               :label='splitter.splitterNames'>  <!--display splitter list-->
-              <span
-                v-for='(brand, index) in splitter.brandNames'>    <!--display brand list-->
-                {{ brand }}
-              </span>
+              <el-button plain v-for='(brand, index) in splitter.brandNames'>{{ brand }}</el-button> <!--display brand list-->
             </el-tab-pane>
           </el-tabs>
       </div>
@@ -59,6 +56,8 @@
 </script>
 
 <style scoped>
+  #container {
+  }
   #tabControlSelect {
     margin: auto;
     margin-top: 30px;

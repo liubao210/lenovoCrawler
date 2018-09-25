@@ -38,6 +38,6 @@
   #submitButton {
     margin:auto;
     text-align:center;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 </style>
