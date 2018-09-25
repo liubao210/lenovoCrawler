@@ -1,22 +1,28 @@
 <template>
-  <div id="tabControlSelect">
-    <el-tabs tab-position=left style="height: 200px;">
-      <el-tab-pane
-        v-for='(splitter) in splitterLables'
-        :key='splitter.splitterKey'
-        :label='splitter.splitterNames'>  <!--display splitter list-->
-        <span
-          v-for='(brand, index) in splitter.brandNames'>    <!--display brand list-->
-          {{ brand }}
-        </span>
-      </el-tab-pane>
-    </el-tabs>
+  <div>
+    <transition name="el-zoom-in-top">
+      <div id="tabControlSelect" v-show='isActive'><!--绑定样式，激活与未激活-->
+          <el-tabs tab-position=left style="height: 200px;">
+            <el-tab-pane
+              v-for='(splitter) in splitterLables'
+              :key='splitter.splitterKey'
+              :label='splitter.splitterNames'>  <!--display splitter list-->
+              <span
+                v-for='(brand, index) in splitter.brandNames'>    <!--display brand list-->
+                {{ brand }}
+              </span>
+            </el-tab-pane>
+          </el-tabs>
+      </div>
+    </transition>
   </div>
 </template>
 <script>
+  import EVENTBUS from '@/eventBus'
   export default {
     data() {
       return {
+        isActive : false,
         tabPosition: 'left',
         splitterLables: [
           {
@@ -38,7 +44,17 @@
           },
         ],
       };
-    }
+    },
+    created() {
+      this.activateTabSelect()
+    },
+    methods: {
+      activateTabSelect() {
+        EVENTBUS.$on('activatingTabSelect', siteValue => {
+          (isNaN(parseInt(siteValue)))?this.isActive = false :this.isActive = true;
+        })
+      }
+    },
   };
 </script>
 

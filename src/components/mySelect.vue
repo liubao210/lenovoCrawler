@@ -5,8 +5,8 @@
       <table>
         <tr>
           <th>Site</th>
-          <th>Splitter</th>
-          <th>Brand</th>
+          <!--<th>Splitter</th>
+          <th>Brand</th>-->
         </tr>
         <tr>
           <td><el-select
@@ -20,7 +20,7 @@
               :value="item.value">
             </el-option>
           </el-select></td>
-          <td><el-select
+          <!--<td><el-select
             v-model="splitterValue"
             @change='changeSplitter'
             clearable
@@ -44,7 +44,7 @@
                 :label="item.label"
                 :value="item.value">
               </el-option>
-            </el-select></td>
+            </el-select></td>-->
         </tr>
       </table>
     </div>
@@ -362,7 +362,7 @@
           },
         }
       },
-    watch: {
+    /*watch: {
       siteValue: function(){
         (isNaN(parseInt(this.siteValue)))?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择';
         (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
@@ -370,12 +370,12 @@
       splitterValue: function(){
         (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
       }
-    },
+    },*/
     methods: {
-      handleChange(value) {
-        // console.log(value);
+      /*handleChange(value) {
+         console.log(value);
       },
-      /*handleItemChange(val) {
+      handleItemChange(val) {
         console.log('active item:', val);
         this.siteList[0].children[0].children = [
           {
@@ -385,14 +385,16 @@
         ]
       }*/
       changeSite(val){
-        (isNaN(parseInt(this.siteValue)))?this.isSplitterDisabled = true :this.isSplitterDisabled = false;//更改级联选择可选择状态
-        this.splitterList = this.siteList[val].children;//给splitter赋值，有接口后通过后台爬虫获得
+        /*(isNaN(parseInt(this.siteValue)))?this.isSplitterDisabled = true :this.isSplitterDisabled = false;//更改级联选择可选择状态
+        this.splitterList = this.siteList[val].children;//给splitter赋值，有接口后通过后台爬虫获得*/
         EVENTBUS.$emit('activatingSubmitButton',this.siteValue)//EVENTBUS传递参数，激活submitButton为可选择状态
+        EVENTBUS.$emit('activatingTabSelect', this.siteValue)//EVENTBUS传递参数，激活tabControlSelect为可选择状态
+
       },
-      changeSplitter(val){
+      /*changeSplitter(val){
         (isNaN(parseInt(this.splitterValue)))?this.isBrandDisabled = true :this.isBrandDisabled = false;
         this.brandList = this.splitter[val].children;//给brand赋值，有接口后通过后台爬虫获得
-      },
+      },*/
     }
   }
 </script>
