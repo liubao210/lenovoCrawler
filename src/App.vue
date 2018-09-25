@@ -8,7 +8,7 @@
         </transition>
         <submitButton></submitButton>
         <div id="resultHolder">
-          <tabControl></tabControl><!--页面切换-->
+          <tabControlResult></tabControlResult><!--页面切换-->
         </div>
       </el-main>
     </el-container>
@@ -18,14 +18,14 @@
 <script>
 import mySelect from "@/components/mySelect"
 import submitButton from '@/components/submitButton'
-import tabControl from '@/components/tabControl'
+import tabControlResult from '@/components/tabControlResult'
 import tabControlSelect from '@/components/tabControlSelect'
 export default {
   name: 'App',
   components: {
     mySelect,
     submitButton,
-    tabControl,
+    tabControlResult,
     tabControlSelect,
   },
 }
