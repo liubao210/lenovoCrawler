@@ -20,6 +20,7 @@
               :value="item.value">
             </el-option>
           </el-select></td>
+          <!--舍弃的级联选择模式-->
           <!--<td><el-select
             v-model="splitterValue"
             @change='changeSplitter'
@@ -147,127 +148,127 @@
           },
           {
             url: '',
-            value: 7,
+            value: 8,
             label: 'Germany (DE)',
             children: [],
           },
           {
             url: '',
-            value: 8,
+            value: 9,
             label: 'Ghana (GH)',
             children: [],
           },
           {
             url: '',
-            value: 9,
-            label: 'Greece (GR)',
-            children: [],
-          },
-          {
-            url: '',
             value: 10,
-            label: 'Hong Kong (HK)',
+            label: 'Greece (GR)',
             children: [],
           },
           {
             url: '',
             value: 11,
-            label: 'Hong Kong(EN) (HK)',
+            label: 'Hong Kong (HK)',
             children: [],
           },
           {
             url: '',
             value: 12,
-            label: 'Hungary (HU)',
+            label: 'Hong Kong(EN) (HK)',
             children: [],
           },
           {
             url: '',
             value: 13,
-            label: 'Indonesia (ID)',
+            label: 'Hungary (HU)',
             children: [],
           },
           {
             url: '',
             value: 14,
-            label: 'Greece (GR)',
+            label: 'Indonesia (ID)',
             children: [],
           },
           {
             url: '',
             value: 15,
-            label: 'Japan (JP)',
+            label: 'Greece (GR)',
             children: [],
           },
           {
             url: '',
             value: 16,
-            label: 'Jordan (JO)',
+            label: 'Japan (JP)',
             children: [],
           },
           {
             url: '',
             value: 17,
-            label: 'Kazakhstan (KZ)',
+            label: 'Jordan (JO)',
             children: [],
           },
           {
             url: '',
             value: 18,
-            label: 'Kenya (KE)',
+            label: 'Kazakhstan (KZ)',
             children: [],
           },
           {
             url: '',
             value: 19,
-            label: 'Korea (KR)',
+            label: 'Kenya (KE)',
             children: [],
           },
           {
             url: '',
             value: 20,
-            label: 'KSA (SA)',
+            label: 'Korea (KR)',
             children: [],
           },
           {
             url: '',
             value: 21,
-            label: 'Lebanon (LB)',
+            label: 'KSA (SA)',
             children: [],
           },
           {
             url: '',
             value: 22,
-            label: 'Macedonia (MK)',
+            label: 'Lebanon (LB)',
             children: [],
           },
           {
             url: '',
             value: 23,
-            label: 'Malaysia (MY)',
+            label: 'Macedonia (MK)',
             children: [],
           },
           {
             url: '',
             value: 24,
-            label: 'Moldova (MD)',
+            label: 'Malaysia (MY)',
             children: [],
           },
           {
             url: '',
             value: 25,
-            label: 'Morocco (MA)',
+            label: 'Moldova (MD)',
             children: [],
           },
           {
             url: '',
             value: 26,
-            label: 'New Zealand (NZ)',
+            label: 'Morocco (MA)',
             children: [],
           },
           {
             url: '',
             value: 27,
+            label: 'New Zealand (NZ)',
+            children: [],
+          },
+          {
+            url: '',
+            value: 28,
             label: 'Nigeria (NG)',
             children: [],
           },
@@ -362,7 +363,8 @@
           },
         }
       },
-    /*watch: {
+    /*舍弃的级联选择模式
+    watch: {
       siteValue: function(){
         (isNaN(parseInt(this.siteValue)))?this.placeholderSplitterStatus='请先选择Site' :this.placeholderSplitterStatus='请选择';
         (isNaN(parseInt(this.splitterValue)))?this.placeholderBrandStatus='请先选择Splitter' :this.placeholderBrandStatus='请选择';
@@ -372,7 +374,8 @@
       }
     },*/
     methods: {
-      /*handleChange(value) {
+      /*舍弃的级联选择模式
+      handleChange(value) {
          console.log(value);
       },
       handleItemChange(val) {
@@ -391,7 +394,8 @@
         EVENTBUS.$emit('activatingTabSelect', this.siteValue)//EVENTBUS传递参数，激活tabControlSelect为可选择状态
 
       },
-      /*changeSplitter(val){
+      /*舍弃的级联选择模式
+        changeSplitter(val){
         (isNaN(parseInt(this.splitterValue)))?this.isBrandDisabled = true :this.isBrandDisabled = false;
         this.brandList = this.splitter[val].children;//给brand赋值，有接口后通过后台爬虫获得
       },*/
