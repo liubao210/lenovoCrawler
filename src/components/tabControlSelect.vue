@@ -15,10 +15,10 @@
             </el-checkbox>
             <el-checkbox-group
               v-model="checkedBrand"
-              @change="handleCheckedBrandChange">
+              @change="handleCheckedBrandChange(index)">
               <el-checkbox
                 v-for="brand in splitter.brandNames"
-                :key='splitter.splitterKey'
+                :key='splitter.brandKey'
                 :label="brand">
                 {{ brand }}
               </el-checkbox><!--display brand list-->
@@ -33,17 +33,18 @@
   import EVENTBUS from '@/eventBus'
   //const cityOptions = ['上海', '北京', '广州', '深圳'];
   export default {
-    data() {
+    data(){
       return {
-        checkAll: true,
+        checkAll: false,
+        isIndeterminate: true,
         checkedBrand: [],
-        isIndeterminate: false,
         isActive : false,
         tabPosition: 'left',
         splitterLables: [
           {
             splitterNames:'Desktop',
             splitterKey: 1001,
+            brandKey: 1101,
             brandNames: [
               'ThinKPad',
               'Yoga',
@@ -53,6 +54,7 @@
           {
             splitterNames: 'WorkStation',
             splitterKey: 1002,
+            brandKey: 1102,
             brandNames: [
               'ThinkStation',
               'ThinkServer',
@@ -71,15 +73,15 @@
         })
       },
       handleCheckAllChange(index) {
-        this.checkedBrand = this.checkAll ? this.splitterLables[index].brandNames : [];
-        this.isIndeterminate = false;
-        this.checkAll = false;
-        console.log(index)
+        this.checkedBrand = this.checkAll ? this.splitterLables[index].brandNames : [];//判断是否全选，若全选则...
+        this.checkAll != this.checkAll;//更改全选布尔值状态，
+        this.isIndeterminate != this.isIndeterminate;
       },
-      handleCheckedBrandChange(value) {
-        let checkedCount = value.length;
-        this.checkAll = checkedCount === this.cities.length;
-        this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+      handleCheckedBrandChange(index) {
+        console.log(index)//value是已经check的brand组成的数组
+        let checkedCount = this.checkedBrand.length;
+        this.checkAll = checkedCount === this.splitterLables[index].brandNames.length;
+        this.isIndeterminate = checkedCount > 0 && checkedCount < this.splitterLables[index].brandNames.length;
       },
     },
   };
