@@ -75,7 +75,7 @@
       handleCheckAllChange(index) {
         this.checkedBrand = this.checkAll ? this.splitterLables[index].brandNames : [];//判断是否全选，若全选则...
         this.checkAll != this.checkAll;//更改全选布尔值状态，
-        this.isIndeterminate != this.isIndeterminate;
+        this.isIndeterminate != this.isIndeterminate;//是否全选的样式控制
       },
       handleCheckedBrandChange(index) {
         console.log(index)//value是已经check的brand组成的数组
