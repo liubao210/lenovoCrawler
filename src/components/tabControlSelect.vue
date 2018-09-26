@@ -7,7 +7,6 @@
             v-for='(splitter, index) in splitterLables'
             :key='splitter.splitterKey'
             :label='splitter.splitterNames'>  <!--display splitter list-->
-            <!--<el-button plain v-for='(brand, index) in splitter.brandNames'>{{ brand }}</el-button>--> <!--display brand list-->
             <el-checkbox
               :indeterminate="isIndeterminate"
               v-model="checkAll"
@@ -19,9 +18,10 @@
               @change="handleCheckedBrandChange">
               <el-checkbox
                 v-for="brand in splitter.brandNames"
+                :key='splitter.splitterKey'
                 :label="brand">
                 {{ brand }}
-              </el-checkbox>
+              </el-checkbox><!--display brand list-->
             </el-checkbox-group>
           </el-tab-pane>
         </el-tabs>
