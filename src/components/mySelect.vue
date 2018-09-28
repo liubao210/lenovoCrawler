@@ -48,6 +48,14 @@
             </el-select></td>-->
         </tr>
       </table>
+      <table>
+        <tr>
+          <td><el-radio v-model="radio" label='0'>subseries基本信息</el-radio></td>
+          <td><el-radio v-model="radio" label='1'>subseries详细信息</el-radio></td>
+          <td><el-radio v-model="radio" label='2'>model基本信息</el-radio></td>
+          <td><el-radio v-model="radio" label='3'>model详细信息</el-radio></td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -58,6 +66,7 @@
     name: "mySelect",
     data() {
       return {
+        radio: '1' ,
         placeholderSplitterStatus:'请先选择Site',
         placeholderBrandStatus:'请先选择Site',
         isSplitterDisabled: true,
