@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <el-container><!--elementUi 外层主容器-->
-      <el-main><!--elementUi 外层容器-->
+    <el-container><!--elementUi 主容器-->
+      <el-main><!--elementUi main容器-->
         <mySelect></mySelect><!--选择菜单-->
-        <transition name="el-fade-in">
-          <tabControlSelect></tabControlSelect>
+        <transition name="el-fade-in"><!--渐变-->
+          <tabControlSelect></tabControlSelect><!--第二级选择菜单-->
         </transition>
-        <submitButton></submitButton>
+        <submitButton></submitButton><!--提交按钮-->
         <div id="resultHolder">
           <tabControlResult></tabControlResult><!--页面切换-->
         </div>
