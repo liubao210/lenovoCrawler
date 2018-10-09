@@ -30,6 +30,23 @@
         });//激活subminButton的可选择状态
         EVENTBUS.$off('activatingSubmitButton', siteValue);//注销EVENTBUS监听
       },
+      submit() {
+        var url = '/SubmitManualTask';
+        this.$axios({
+          methods: 'get',
+          url: url,
+          params: {
+            cc: "ae",
+            lc: "en",
+            scope_json: '',
+            task_type: '',
+          }
+        }).then(function (response) {
+          console.log(response);
+        }).catch(error=>{
+          console.log(error);
+        })
+      }
     },
   }
 </script>

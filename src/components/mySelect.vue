@@ -83,7 +83,7 @@
         siteList: [
           {
             url: "japan.com",
-            value: 0,
+            value: 'MEA',
             label: "Algeria (DZ)",
             children: [
               {
@@ -401,7 +401,7 @@
         this.splitterList = this.siteList[val].children;//给splitter赋值，有接口后通过后台爬虫获得*/
         EVENTBUS.$emit('activatingSubmitButton',this.siteValue)//EVENTBUS传递参数，激活submitButton为可选择状态
         EVENTBUS.$emit('activatingTabSelect', this.siteValue)//EVENTBUS传递参数，激活tabControlSelect为可选择状态
-
+        EVENTBUS.$emit('activeGetSplitter', this.siteValue)
       },
       /*舍弃的级联选择模式
         changeSplitter(val){

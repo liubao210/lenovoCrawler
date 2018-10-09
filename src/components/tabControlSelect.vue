@@ -65,12 +65,20 @@
     },
     created() {
       this.activateTabSelect()
+      this.activeGetSplitter()
     },
     methods: {
       activateTabSelect() {
         EVENTBUS.$on('activatingTabSelect', siteValue => {
           (isNaN(parseInt(siteValue)))?this.isActive = false :this.isActive = true;
         })
+      },
+      activeGetSplitter() {
+        EVENTBUS.$on('activeGetSplitter', siteValue => {
+          this.getSplitter(siteValue)
+        });
+        // alert("activeGetSplitter")
+        // console.log(reg)
       },
       handleCheckAllChange(index) {
         this.checkedBrand = this.checkAll ? this.splitterLables[index].brandNames : [];//判断是否全选，若全选则...
@@ -82,6 +90,22 @@
         let checkedCount = this.checkedBrand.length;
         this.checkAll = checkedCount === this.splitterLables[index].brandNames.length;
         this.isIndeterminate = checkedCount > 0 && checkedCount < this.splitterLables[index].brandNames.length;
+      },
+      getSplitter(reg) {
+        var url = '/GetSpliterAndBrandBySite';
+        this.$axios({
+          methods: 'get',
+          url: url,
+          params: {
+            region: reg,
+            cc: "ae",
+            lc: "en",
+          }
+        }).then(function (response) {
+          console.log(response);
+        }).catch(error=>{
+          console.log(error);
+        })
       },
     },
   };
