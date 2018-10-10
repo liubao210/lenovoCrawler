@@ -40,6 +40,7 @@
         checkedBrand: [],
         isActive : false,
         tabPosition: 'left',
+        testData: [],
         splitterLables: [
           {
             splitterNames:'Desktop',
@@ -92,6 +93,7 @@
         this.isIndeterminate = checkedCount > 0 && checkedCount < this.splitterLables[index].brandNames.length;
       },
       getSplitter(reg) {
+        var that =this;
         var url = '/GetSpliterAndBrandBySite';
         this.$axios({
           methods: 'get',
@@ -102,7 +104,10 @@
             lc: "en",
           }
         }).then(function (response) {
-          console.log(response);
+          console.log(response.data);
+          console.log(response.data.spliter_arr);
+          that.testData = response.data;
+          console.log(that.testData.spliter_arr);
         }).catch(error=>{
           console.log(error);
         })

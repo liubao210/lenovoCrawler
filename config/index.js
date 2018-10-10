@@ -20,15 +20,32 @@ module.exports = {
         pathRewrite: {
           '^/GetSpliterAndBrandBySite': '/GetSpliterAndBrandBySite'
         }
-      }},
-    '/SubmitManualTask': {
-      target: 'https://wpc-product-pro.earth.xpaas.lenovo.com',
-      changeOrigin: true,
-      secure: false,
-      pathRewrite: {
-        '^/SubmitManualTask': '/SubmitManualTask'
-      }
-    }},
+      },
+      '/SubmitManualTask': {
+        target: 'https://wpc-product-pro.earth.xpaas.lenovo.com',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/SubmitManualTask': '/SubmitManualTask'
+        }
+      },
+      '/GetAllManualTaskByPage': {
+        target: 'https://wpc-product-pro.earth.xpaas.lenovo.com',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/GetAllManualTaskByPage': '/GetAllManualTaskByPage'
+        }
+      },
+      '/DownloadTaskReportAsExcel': {
+        target: 'https://wpc-product-pro.earth.xpaas.lenovo.com',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/DownloadTaskReportAsExcel': '/DownloadTaskReportAsExcel'
+        }
+      },
+      },
       // Various Dev Server settings
       host: 'localhost', // can be overwritten by process.env.HOST
       port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
@@ -52,7 +69,6 @@ module.exports = {
 
       cssSourceMap: true
     },
-
     build: {
       // Template for index.html
       index: path.resolve(__dirname, '../dist/index.html'),
