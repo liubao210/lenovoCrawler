@@ -45,6 +45,14 @@ module.exports = {
           '^/DownloadTaskReportAsExcel': '/DownloadTaskReportAsExcel'
         }
       },
+      '/GetSingleManualTaskDetail': {
+        target: 'https://wpc-product-pro.earth.xpaas.lenovo.com',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/GetSingleManualTaskDetail': '/GetSingleManualTaskDetail'
+        }
+      }
       },
       // Various Dev Server settings
       host: 'localhost', // can be overwritten by process.env.HOST
@@ -72,6 +80,7 @@ module.exports = {
     build: {
       // Template for index.html
       index: path.resolve(__dirname, '../dist/index.html'),
+      review: path.resolve(__dirname, '../dist/review.html'),
 
       // Paths
       assetsRoot: path.resolve(__dirname, '../dist'),

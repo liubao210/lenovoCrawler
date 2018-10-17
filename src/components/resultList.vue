@@ -18,10 +18,23 @@
         label="爬取时间"
         width="120">
       </el-table-column>
+      <!--<el-table-column-->
+        <!--prop="task_type"-->
+        <!--label="任务类型"-->
+        <!--width="120">-->
+      <!--</el-table-column>-->
       <el-table-column
-        prop="task_type"
+        prop="task_status"
         label="任务类型"
-        width="120">
+        width="170"
+        :filters="[{ text: 'SubSeries基本信息', value: '0' }, { text: 'SubSeries详细信息', value: '1' }, { text: 'Model基本信息', value: '2' }, { text: 'Model详细信息', value: '3' }]"
+        :filter-method="filterTag2"
+        filter-placement="bottom-end">
+        <template slot-scope="scope">
+          <el-tag
+            :type=getTaskType(scope.row.task_type)
+            disable-transitions>{{ getTaskType2(scope.row.task_type) }}</el-tag>
+        </template>
       </el-table-column>
       <!--<el-table-column-->
         <!--prop="task_status"-->
@@ -46,29 +59,75 @@
         width="150">
         <template slot-scope="scope" style="text-align:center">
           <el-button-group>
-            <el-button @click="handleClick(scope.row)" type="success" size="small">预览</el-button>
+            <el-button @click="handleClick(scope.row)" type="success" size="small"><a style="text-decoration: none; color: white" :href="'./review.html?a=' + scope.row.ID">预览</a></el-button>
             <el-button @click="downLoadExcel(scope.row.ID)" type="primary" size="small">下载</el-button>
           </el-button-group>
         </template>
       </el-table-column>
     </el-table>
+    <div class="pagination">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage4"
+        :page-sizes="[10, 25, 50, 100]"
+        :page-size="10"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total=totalItem>
+      </el-pagination>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    mounted: function(){
+    mounted: function () {
       this.getTaskList(1)
+      this.getdata(1)
+      // console.log(this.getTaskType(0))
+    },
+    data: function(){
+      return{
+        tableData:[],
+        totalItem:0,
+        totalPage:0
+      }
     },
     methods: {
+      getdata(task_id) {
+        var url = '/GetSingleManualTaskDetail';
+        this.$axios({
+          methods: 'get',
+          url: url,
+          params: {
+            task_id: task_id
+          }
+        }).then(function (response) {
+          console.log(response);
+        }).catch(error => {
+          console.log(error);
+        })
+      },
       handleClick(row) {
         console.log(row);
+        // console.log(this.getTaskType(0))
       },
       filterTag(value, row) {
         return row.task_status === value;
       },
+      filterTag2(value, row) {
+        return row.task_type === value;
+      },
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        // console.log(`当前页: ${val}`);
+        // console.log(val);
+        this.getTaskList(val)
+      },
       getTaskList(reg) {
-        var that =this;
+        var that = this;
         var url = '/GetAllManualTaskByPage';
         this.$axios({
           methods: 'get',
@@ -79,54 +138,50 @@
           }
         }).then(function (response) {
           console.log(response.data);
-          console.log(response.data.data);
+          // console.log(response.data.totalItem);
           // console.log(response.data.spliter_arr);
+
           that.tableData = response.data.data;
-          console.log(that.testData.spliter_arr);
-        }).catch(error=>{
+          that.totalItem = response.data.totalItem;
+          that.totalPage = response.data.totalPage;
+
+          // console.log(that.testData.spliter_arr);
+          console.log(that.totalPage)
+          console.log(that.totalItem)
+        }).catch(error => {
           console.log(error);
         })
       },
       downLoadExcel(reg) {
         // var that =this;
         console.log(reg);
-        var url = '/DownloadTaskReportAsExcel';
-        this.$axios({
-          methods: 'get',
-          url: url,
-          params: {
-            task_id: reg,
-          }
-        }).then(function (response) {
-          console.log(response);
-        }).catch(error=>{
-          console.log(error);
-        })
+        var url = '/DownloadTaskReportAsExcel?task_id=' + reg;
+        window.location.href = url;
       },
-    },
-
-    data() {
-      return {
-        tableData: [{
-          create_date: '2016-05-03',
-          create_time: 'xxx',
-          task_status: '2',
-          task_type: '1',
-          ID: 1,
-          site: 'Japan',
-          splitter: 'Laptop',
-          brand: 'ThinkPad',
-          series: 'ThinkPad x AlienWare',
-          subseries: 23333333,
-        },]
+      getTaskType2(type){
+        switch(type){
+          case "1":
+            return "Subseries基本信息"
+          case "2":
+            return "Subseries详细信息"
+          case "3":
+            return "Model基本信息"
+          case "4":
+            return "Model详细信息"
+        }
+      },
+      getTaskType(type){
+        switch (type) {
+          case "1":
+            return "success"
+          case "2":
+            return "info"
+          case "3":
+            return "warning"
+          case "4":
+            return ""
+        }
       }
     }
   }
 </script>
-
-<style scoped>
-  #resultList {
-    margin: auto;
-    width: 90%;
-    }
-</style>

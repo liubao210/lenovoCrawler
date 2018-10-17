@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!--<router-view></router-view>-->
     <el-container><!--elementUi 主容器-->
       <el-main><!--elementUi main容器-->
         <mySelect></mySelect><!--选择菜单-->
