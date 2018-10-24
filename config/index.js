@@ -2,8 +2,6 @@
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
-var proxyConfig = require('./proxyConfig')
-
 const path = require('path')
 
 module.exports = {
@@ -52,7 +50,23 @@ module.exports = {
         pathRewrite: {
           '^/GetSingleManualTaskDetail': '/GetSingleManualTaskDetail'
         }
-      }
+      },
+      '/SubmitManualTask': {
+        target: 'https://wpc-product-pro.earth.xpaas.lenovo.com',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/SubmitManualTask': '/SubmitManualTask'
+        }
+      },
+      '/TestParams ': {
+        target: 'https://wpc-product-pro.earth.xpaas.lenovo.com',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/TestParams': '/TestParams'
+        }
+      },
       },
       // Various Dev Server settings
       host: 'localhost', // can be overwritten by process.env.HOST
@@ -80,12 +94,13 @@ module.exports = {
     build: {
       // Template for index.html
       index: path.resolve(__dirname, '../dist/index.html'),
+      //配置预览页面
       review: path.resolve(__dirname, '../dist/review.html'),
 
       // Paths
       assetsRoot: path.resolve(__dirname, '../dist'),
       assetsSubDirectory: 'static',
-      assetsPublicPath: '/',
+      assetsPublicPath: './',
 
       /**
        * Source Maps

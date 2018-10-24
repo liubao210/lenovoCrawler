@@ -15,7 +15,7 @@
       </el-table-column>
       <el-table-column
         prop="province"
-        label="Splitter"
+        label="Spliter"
         width="120">
       </el-table-column>
       <el-table-column

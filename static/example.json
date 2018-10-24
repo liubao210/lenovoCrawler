@@ -1,0 +1,122 @@
+{
+"region_name": "MEA",
+"cc": "ae",
+"lc": "en",
+"spliter_arr": [
+{
+"spliter_name": "Laptops",
+"spliter_id": "Laptops",
+"spliter_shortName": "Laptops",
+"brand_arr": [
+{
+"brand_name": "THINKPAD",
+"brand_id": "thinkpad-laptops",
+"brand_URL": "/laptops/thinkpad/c/thinkpad-laptops"
+},
+{
+"brand_name": "LENOVO",
+"brand_id": "lenovo",
+"brand_URL": "/laptops/lenovo/c/lenovo"
+},
+{
+"brand_name": "IDEAPAD",
+"brand_id": "ideaPad",
+"brand_URL": "/laptops/ideapad/c/ideaPad"
+},
+{
+"brand_name": "YOGA",
+"brand_id": "yoga",
+"brand_URL": "/laptops/yoga/c/yoga"
+},
+{
+"brand_name": "Legion Laptops",
+"brand_id": "legion-laptops",
+"brand_URL": "/laptops/legion-laptops/c/legion-laptops"
+}
+]
+},
+{
+"spliter_name": "Tablets",
+"spliter_id": "TABLETS",
+"spliter_shortName": "Tablets",
+"brand_arr": [
+{
+"brand_name": "Android Tablets",
+"brand_id": "android-tablets",
+"brand_URL": "/tablets/android-tablets/c/android-tablets"
+},
+{
+"brand_name": "Windows Tablets",
+"brand_id": "windows-tablets",
+"brand_URL": "/tablets/windows-tablets/c/windows-tablets"
+},
+{
+"brand_name": "Convertibles",
+"brand_id": "convertibles",
+"brand_URL": "/tablets/convertibles/c/convertibles"
+}
+]
+},
+{
+"spliter_name": "Smart-devices",
+"spliter_id": "Smart-devices",
+"spliter_shortName": "Smart Devices",
+"brand_arr": [
+{
+"brand_name": "Virtual & Augmented Reality",
+"brand_id": "virtual-reality",
+"brand_URL": "/smart-devices/virtual-and-augmented-reality/c/virtual-reality"
+},
+{
+"brand_name": "Smartphones",
+"brand_id": "lenovo-smartphones",
+"brand_URL": "/smart-devices/smartphones/c/lenovo-smartphones"
+},
+{
+"brand_name": "Smart Office",
+"brand_id": "smart-office",
+"brand_URL": "/smart-devices/smart-office/c/smart-office"
+}
+]
+},
+{
+"spliter_name": "Desktops",
+"spliter_id": "Desktops",
+"spliter_shortName": "Desktops",
+"brand_arr": [
+{
+"brand_name": "ThinkCentre",
+"brand_id": "thinkcentre",
+"brand_URL": "/desktops/thinkcentre/c/thinkcentre"
+},
+{
+"brand_name": "IDEACENTRE",
+"brand_id": "ideacentre",
+"brand_URL": "/desktops/ideacentre/c/ideacentre"
+},
+{
+"brand_name": "Lenovo",
+"brand_id": "Lenovo",
+"brand_URL": "/desktops/lenovo/c/Lenovo"
+},
+{
+"brand_name": "Legion Desktops",
+"brand_id": "legion-desktops",
+"brand_URL": "/desktops/legion-desktops/c/legion-desktops"
+}
+]
+},
+{
+"spliter_name": "Workstations",
+"spliter_id": "Workstations",
+"spliter_shortName": "Workstations",
+"brand_arr": [
+{
+"brand_name": "Workstations",
+"brand_id": "Workstations",
+"brand_URL": "/c/Workstations"
+}
+]
+}
+]
+}

@@ -62,7 +62,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.build.index,
-      template: 'index.html',
+      template: './index.html',
       inject: true,
       minify: {
         removeComments: true,
@@ -74,9 +74,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
+    //配置预览页面
     new HtmlWebpackPlugin({
       filename: config.build.review,
-      template: './src/review/index.html',
+      template: './src/review/review.html',
       inject: true,
       minify: {
         removeComments: true,

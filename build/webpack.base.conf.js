@@ -3,7 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-
+var webpack = require('webpack')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -14,7 +14,8 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js',
-    review: './src/review/main.js'
+    //配置预览页面入口文件
+    review: './src/review/main.js',
   },
   output: {
     path: config.build.assetsRoot,
@@ -79,5 +80,11 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
+  ],
 }

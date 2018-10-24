@@ -9,13 +9,13 @@ import 'element-ui/lib/theme-chalk/index.css';
 //vue-axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
- 
+//jQuery
+import $ from 'jquery'
+
 Vue.use(VueAxios, axios)
-
-Vue.prototype.$axios = axios
-
 Vue.use(ElementUI);
-
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

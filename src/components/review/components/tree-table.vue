@@ -60,7 +60,7 @@
 		watch: {
 			'list': {
 				handler() {
-					console.log('ddddd')
+					// console.log('ddddd')
 					this.initTreeData()
 				},
 				deep: true
@@ -73,7 +73,7 @@
 		},
 		methods: {
 			initTreeData() {
-				console.log('处理前的:', JSON.parse(JSON.stringify(this.list)))
+				// console.log('处理前的:', JSON.parse(JSON.stringify(this.list)))
 				// 这里一定要转化，要不然他们的值监听不到变化
 				let tempData = JSON.parse(JSON.stringify(this.list))
 				let reduceDataFunc = (data, level) => {
@@ -89,11 +89,11 @@
 					})
 				}
 				reduceDataFunc(tempData, 1)
-				console.log('处理后的:', tempData)
+				// console.log('处理后的:', tempData)
 				this.treeDataSource = tempData
 			},
 			getMore() {
-				alert('滚动到底部加载更多')
+				// alert('滚动到底部加载更多')
 				// 滚动到最后
 				$('#scrollWrap').mCustomScrollbar('scrollTo', 'top', {
 					scrollInertia: 0

@@ -52,12 +52,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
+    // let path = require('path'),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
       inject: true,
-      chunks: ['app']
+      chunks: ['app'],
+      // favicon: path.resolve('./favicon.ico')
     }),
+    //配置预览页面
     new HtmlWebpackPlugin({
       filename: 'review.html',
       template: './src/review/review.html',
